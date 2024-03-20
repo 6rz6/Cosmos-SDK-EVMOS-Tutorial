@@ -1,8 +1,9 @@
 
-# Cosmos-SDK-EVMOS-Tutorial
+# CosmosSDK and EVMOS Installation, configuration and Usage Tutorial
 
-Create your own blockchain and Validator Nodes using the Cosmos SDK and EVMOS - 
-A simple to follow tutorial - Promised!
+Create your own blockchain and Validator Nodes using the Cosmos SDK and EVMOS in less than an hours.
+
+   A **simple** to follow tutorial - Promised!
 
    for the coplicated, long and complete SDK Tutorials of both the Cosmos SDK and EVMOS see [ref1](#footnote-1)
 
@@ -66,13 +67,16 @@ Run the command ```go version``` again from **Any OTHER** folder on the OS and i
 ## How to Use the Cosmos SDK to Run a Node, API, and CLI
 
 1. Recomended you watch this short 5min [vid to review the next steps](https://youtu.be/wNUjkp2PFQI) or simply start with #2
-  
-2. run in folder /home/CosmosSDK/cosmos-sdk/build # ``` ./simd init demo ```    
+   
+  <a href="https://youtu.be/wNUjkp2PFQI">![image](https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/assets/102882394/f95d618c-194d-4605-a486-6c847387d47b)</a>
+
+
+3. run in folder /home/CosmosSDK/cosmos-sdk/build # ``` ./simd init demo ```    
    the output should be in a format of a [Genenis basic json file](#footnote-2)) (starting with "moniker": "demo")
    
-3. run /home/CosmosSDK/cosmos-sdk/build # ```./simd keys list```
+4. run /home/CosmosSDK/cosmos-sdk/build # ```./simd keys list```
 
-4. Next create keys by running ```./simd keys add b9lab``` and the expected output should be:
+5. Next create keys by running ```./simd keys add b9lab``` and the expected output should be:
 
    ```
      **Important** write this mnemonic phrase in a safe place.
@@ -89,17 +93,17 @@ Run the command ```go version``` again from **Any OTHER** folder on the OS and i
        "key":"Ah+vpcVHqLpwbBAzKqcecPtucu5c1HZRW8gYHxGAhY+"}'
        type: local
 
-5. Define the amount of tokens to create followed by the token name ('stake') in our chain
+6. Define the amount of tokens to create followed by the token name ('stake') in our chain
    /cosmos-sdk/build # ```./simd genesis add-genesis-account b9lab 100000000stake```
 
-6. Define the cost of staking for a Validator Node (use the chain-id name from the Genesis json_1 file) /cosmos-sdk/build #
+7. Define the cost of staking for a Validator Node (use the chain-id name from the Genesis json_1 file) /cosmos-sdk/build #
    ```
    ./simd genesis gentx b9lab 70000000stake --chain-id test-chain-tgFWQe
      Genesis transaction written to "/root/.simapp/config/gentx/gentx-
      eee5fe21000bcbfd270e34d19f227be66cfa5084.json"
    ```
 
-7. Finally we run /cosmos-sdk/build # ```./simd genesis collect-gentxs```
+8. Finally we run /cosmos-sdk/build # ```./simd genesis collect-gentxs```
    which will output a complete cosmos genesis json file including the keys and chain,tokens,
    allocations,gas prices -> see the [cosmos sdk complete Genesis json file](https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/blob/main/Genesis.json) 
 
@@ -180,35 +184,49 @@ The Transcation will take a few seconds to be registered in the blockchain, we c
 ```
  ./simd query bank balances $(./simd keys show student -a)
 ```
+
 And we can see the students balance has increased by the sent amount (10):
      
-   balances:
+ **balances:**
  **- amount: "10"**
    denom: stake
    pagination:
    total: "1"
 
+
+
 ![image](https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/assets/102882394/b9f83e26-4c00-4c85-a96a-2727c81161dd)
 
+
+
+
+
   
-
-
-
-
-
-
-
-
 Rererences
 
 
-<a id="footnote-1" href="#">Full Cosmos and EVMOS Documentation (~250hr of reading)</a> All the steps above are described in the [cosmos.network tutorials portal](https://tutorials.cosmos.network/tutorials/3-run-node/#run-a-node-api-and-cli) 
+<a id="footnote-1" href="#">Full Cosmos and EVMOS Documentation (~250hr of reading)</a> 
 
-and  [full sdk tutorial including Docker images and cosmos sdk official docs](https://tutorials.cosmos.network/tutorials/2-setup/)
+All the steps in the tutorial are described in the [cosmos.network tutorials portal](https://tutorials.cosmos.network/tutorials/3-run-node/#run-a-node-api-and-cli) 
+
+and the [full sdk tutorial including Docker images and cosmos sdk official docs](https://tutorials.cosmos.network/tutorials/2-setup/)
 
 <a id="footnote-2" href="#"> <a href="https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/blob/main/CosmosGenesisBasic.json">Basic Genesis.JSON</a></a>
 
 <a id="footnote-3" href="#"> <a href="https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/blob/main/Genesis.json">Complete Genesis.JSON</a></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Raw Cosmos.json files:
