@@ -44,7 +44,16 @@ and in the [full sdk tutorial including Docker images and cosmos sdk official do
    
 4. run /home/CosmosSDK/cosmos-sdk/build # ```./simd keys list```
 
-5. Next create kyes by running ```./simd keys add b9lab``` and the expected output should be:
+5. Next create keys by running ```./simd keys add b9lab``` and the expected output should be:
+
+   ```
+     **Important** write this mnemonic phrase in a safe place.
+     It is the only way to recover your account if you ever forget your password.
+
+     **happy fast write warm make glory easy ride light woman mean loving confirmed taste clear apple garden burden calm twelve visual dance high social rich**
+
+     Press 'Enter' key to continue.
+   ```
 
      - address: cosmos15n5glgs7n8shcptapfte6klvcwpwz3qc20t4e2
        name: b9lab
@@ -52,17 +61,17 @@ and in the [full sdk tutorial including Docker images and cosmos sdk official do
        "key":"Ah+vpcVHqLpwbBAzKqcecPtucu5c1HZRW8gYHxGAhY+"}'
        type: local
 
-6. Define the amount of tokens to create followed by the token name ('stake') in our chain
+7. Define the amount of tokens to create followed by the token name ('stake') in our chain
    /cosmos-sdk/build # ```./simd genesis add-genesis-account b9lab 100000000stake```
 
-7. Define the cost of staking for a Validator Node (use the chain-id name from the Genesis json_1 file) /cosmos-sdk/build #
+8. Define the cost of staking for a Validator Node (use the chain-id name from the Genesis json_1 file) /cosmos-sdk/build #
    ```
    ./simd genesis gentx b9lab 70000000stake --chain-id test-chain-tgFWQe
      Genesis transaction written to "/root/.simapp/config/gentx/gentx-
      eee5fe21000bcbfd270e34d19f227be66cfa5084.json"
    ```
 
-8. Finally we run /cosmos-sdk/build # ```./simd genesis collect-gentxs```
+9. Finally we run /cosmos-sdk/build # ```./simd genesis collect-gentxs```
    which will output a complete json file including the keys and chain,tokens,
    allocations,gas prices (see the complete Genesis json_2 file below)
 
@@ -92,7 +101,17 @@ and in the [full sdk tutorial including Docker images and cosmos sdk official do
 
 ### Creating a new Wallet Account
 
-  Create a new wallet account named student: ``` ./simd kyes add student ```
+  Create a new wallet account named student: ``` ./simd keys add student ``` 
+  The result will generate another unique MNMC phrase for the student's wallet:
+
+  ```
+     **Important** write this mnemonic phrase in a safe place.
+     It is the only way to recover your account if you ever forget your password.
+
+     **skate apart write warm make glory blossom ball material fat mean confirm taste demand apple uncle burden calm twelve visual dance disease audit federal**
+
+     Press 'Enter' key to continue.
+  ```
 
 
 
