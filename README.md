@@ -1,7 +1,7 @@
 
-# CosmosSDK and EVMOS Installation, configuration and Usage Tutorial
+# Create your own blockchain with CosmosSDK and EVMOS simapp, configuration and Usage Tutorial
 
-Create your own blockchain and Validator Nodes using the Cosmos SDK and EVMOS in less than an hours.
+Create your own blockchain and Validator Nodes in less than an hours using the Cosmos SDK and EVMOS .
 
    A **simple** to follow tutorial - Promised!
 
