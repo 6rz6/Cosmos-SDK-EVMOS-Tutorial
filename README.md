@@ -169,9 +169,15 @@ Next confirm the transaction before signing and broadcasting [y/N]: **y**
 The Transcation will take a few seconds to be registered in the blockchain, we can query the balance of the student to check:
 
 ```
-   ./simd query bank balances $(./simd keys show student -a)
+ ./simd query bank balances $(./simd keys show student -a)
 ```
-
+And we can see the students balance has increased by the sent amount (10):
+     
+   balances:
+ **- amount: "10"**
+   denom: stake
+   pagination:
+   total: "1"
 
 
   
