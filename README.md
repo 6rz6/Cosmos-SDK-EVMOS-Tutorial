@@ -72,11 +72,35 @@ and in the [full sdk tutorial including Docker images and cosmos sdk official do
    run  ```./simd start ```
 
    You will see the chain initiating and the blocks getting generated with an increasing Height value which represents the block number:
-     ![image](https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/assets/102882394/dcc7a296-888e-4694-b052-c0d2cee885f5)
-
-
    
+   ![image](https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/assets/102882394/dcc7a296-888e-4694-b052-c0d2cee885f5)
 
+   The blocks will keep increasing which indicates our new blockchain is running successfully:
+
+   ![image](https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/assets/102882394/a3d576df-6722-4607-ad33-dee50d79e485)
+
+### Wallet Balance
+
+  Open a new terminal and check the balance for the account named b9lab: ``` ./simd query bank balances $(./simd keys show b9lab-1) ```
+  The result will indicate the wallet balance has been decreased by the staking costs we defined for our Validator Node:
+
+       balances:
+     - amount: "30000000"
+       denom: stake
+       pagination:
+       total: "1"
+
+### Creating a new Wallet Account
+
+  Create a new wallet account named student: ``` ./simd kyes add student ```
+
+
+
+
+
+
+
+  
 Genesis JSON_2
    ```
       {
