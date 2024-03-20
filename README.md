@@ -1,8 +1,8 @@
 # Cosmos-SDK-EVMOS-Tutorial
-Create your own blockchain and Validator Nodes using the Cosmos SDK and EVMOS - A simple to follow tutorial (Docker image and link to cosmos sdk official docs[https://tutorials.cosmos.network/tutorials/2-setup/])
+Create your own blockchain and Validator Nodes using the Cosmos SDK and EVMOS - A simple to follow tutorial (for the complete SDK Tutorial see reference 1 below)
 
 ## Its easy Getting Started
-1. Install the lastest GO version[https://go.dev/doc/install] and remove previous versions
+1. Install the lastest [GO version](https://go.dev/doc/install) and remove previous versions
 
 Linux CLI:
 ```
@@ -32,8 +32,8 @@ Linux CLI:
    once the build has been completed without errors.
    run ```./build/simd version``` which should return 0.45.4.
 
-All the steps above are described in the [cosmos.network tutorials portal](https://tutorials.cosmos.network/tutorials/3-run-node/#run-a-node-api-and-cli)
-
+All the steps above are described in the [cosmos.network tutorials portal](https://tutorials.cosmos.network/tutorials/3-run-node/#run-a-node-api-and-cli) 
+and in the [full sdk tutorial including Docker images and cosmos sdk official docs](https://tutorials.cosmos.network/tutorials/2-setup/)
 ## How to Use the Cosmos SDK to Run a Node, API, and CLI
 1. watch this short [vid to review the next steps](https://youtu.be/wNUjkp2PFQI)
     ```
@@ -67,8 +67,15 @@ All the steps above are described in the [cosmos.network tutorials portal](https
    allocations,gas prices (see the complete Genesis json_2 file below)
 
 
+## Start The Blockchain
+     
+   run  ```./simd start ```
+
+   You will see the chain initiating and the blocks getting generated with an increasing Height value which represents the block number:
+     ![image](https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/assets/102882394/dcc7a296-888e-4694-b052-c0d2cee885f5)
 
 
+   
 
 Genesis JSON_2
    ```
