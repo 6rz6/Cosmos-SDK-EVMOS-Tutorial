@@ -41,8 +41,10 @@ All the steps above are described in the [cosmos.network tutorials portal](https
     ```
 2. run in folder /home/CosmosSDK/cosmos-sdk/build # ``` ./simd init demo ```    
    the output should be in a firmat of a Genenis json file (starting with "moniker": "demo")
-3. run /home/CosmosSDK/cosmos-sdk/build # ```./simd keys list```
-4. Next create kyes by running ```./simd keys add b9lab``` and the expected output should be:
+   
+4. run /home/CosmosSDK/cosmos-sdk/build # ```./simd keys list```
+
+5. Next create kyes by running ```./simd keys add b9lab``` and the expected output should be:
 
      - address: cosmos15n5glgs7n8shcptapfte6klvcwpwz3qc20t4e2
        name: b9lab
@@ -50,20 +52,25 @@ All the steps above are described in the [cosmos.network tutorials portal](https
        "key":"Ah+vpcVHqLpwbBAzKqcecPtucu5c1HZRW8gYHxGAhY+"}'
        type: local
 
-5. Define the amount of tokens to create followed by the token name ('stake') in our case
+6. Define the amount of tokens to create followed by the token name ('stake') in our chain
    /cosmos-sdk/build # ```./simd genesis add-genesis-account b9lab 100000000stake```
-6. Define the cost of staking for a Node (use the name from the Genesis json file)
-   /cosmos-sdk/build # ```./simd genesis gentx b9lab 70000000stake --chain-id test-chain-tgFWQe
-Genesis transaction written to "/root/.simapp/config/gentx/gentx-eee5fe21000bcbfd270e34d19f227be66cfa5084.json"```
-7. Finally we run /cosmos-sdk/build # ```./simd genesis collect-gentxs```
+
+7. Define the cost of staking for a Validator Node (use the chain-id name from the Genesis json_1 file) /cosmos-sdk/build #
+   ```
+   ./simd genesis gentx b9lab 70000000stake --chain-id test-chain-tgFWQe
+     Genesis transaction written to "/root/.simapp/config/gentx/gentx-
+     eee5fe21000bcbfd270e34d19f227be66cfa5084.json"
+   ```
+
+8. Finally we run /cosmos-sdk/build # ```./simd genesis collect-gentxs```
    which will output a complete json file including the keys and chain,tokens,
-   allocations,gas prices (see the complete json file below)
+   allocations,gas prices (see the complete Genesis json_2 file below)
 
 
 
 
 
-JSON2
+Genesis JSON_2
    ```
       {
  "moniker": "demo",
