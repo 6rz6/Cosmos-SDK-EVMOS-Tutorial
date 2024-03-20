@@ -113,7 +113,14 @@ and in the [full sdk tutorial including Docker images and cosmos sdk official do
      Press 'Enter' key to continue.
   ```
 
+- address: cosmos1u7209hpnrajperpznlsy9zmdvr3jx2npfu7w4u
+  name: student
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"Anu7Dkoa51eJK7tj65KdzfZ9Cn9lq6RqFxG7B85cdQOn"}'
+  type: local
 
+We have created a wallet for the student. In this stage the wallet has 0 balance and isnt known by the blockchain, lets send him some tokens
+
+### Sending and Receiving tokens on our Blockchain
 
 
 
