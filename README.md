@@ -1,7 +1,13 @@
+
 # Cosmos-SDK-EVMOS-Tutorial
-Create your own blockchain and Validator Nodes using the Cosmos SDK and EVMOS - A simple to follow tutorial (for the complete SDK Tutorial see reference 1 below)
+
+Create your own blockchain and Validator Nodes using the Cosmos SDK and EVMOS - 
+A simple to follow tutorial - Promised!
+
+     (for the coplicated, long and complete SDK Tutorials of both the Cosmos SDK and EVMOS see [reference1](#footnote-1))
 
 ## Its easy Getting Started
+
 1. Install the lastest [GO version](https://go.dev/doc/install) and remove previous version using Linux CLI:
 
 ```
@@ -11,7 +17,9 @@ Create your own blockchain and Validator Nodes using the Cosmos SDK and EVMOS - 
      tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz     
 ```
 run -> ``` go version ``` in the CLI -> Expected result: ``` go version go1.22.1 linux/amd64 ```
+
 Once GO version shows the right version add GO to the env global path ``` export PATH=$PATH:$(go env GOPATH)/bin ```
+
 Run the command ```go version``` again from **Any OTHER** folder on the OS and it should bring the same result ``` go version go1.22.1 linux/amd64 ```
 
 2. **Installing EVMOS**
@@ -32,6 +40,7 @@ Run the command ```go version``` again from **Any OTHER** folder on the OS and i
           make install
           evmosd version
     ```   
+  
   2.6 If a ```evmosd: command not found ``` error message is returned -> **you have misconfigured Go** or installed a **wrong version** (below 1.21)
    Once the evmosd version is displayed we can proceed to install Rust.
    
@@ -39,6 +48,7 @@ Run the command ```go version``` again from **Any OTHER** folder on the OS and i
    
 4. Clone the cosmos SDK from github and clone it to /home/cosmos/cosmos-sdk
    Make sure you are using the same version as below v0.45.4
+
    ```
    mkdir cosmos
    cd cosmos
@@ -47,19 +57,18 @@ Run the command ```go version``` again from **Any OTHER** folder on the OS and i
    git checkout v0.45.4 
 
    ```
+
 5. If Everything was installed correctly, you should be able to run in /home/cosmos/cosmos-sdk/
    ```make build```
    once the build has been completed without errors.
    run ```./build/simd version``` which should return 0.45.4.
 
-All the steps above are described in the [cosmos.network tutorials portal](https://tutorials.cosmos.network/tutorials/3-run-node/#run-a-node-api-and-cli) 
-and in the [full sdk tutorial including Docker images and cosmos sdk official docs](https://tutorials.cosmos.network/tutorials/2-setup/)
-
 ## How to Use the Cosmos SDK to Run a Node, API, and CLI
-1. you can watch this short [vid to review the next steps](https://youtu.be/wNUjkp2PFQI) or simply start 
+
+1. Recomended you watch this short 5min [vid to review the next steps](https://youtu.be/wNUjkp2PFQI) or simply start with #2
   
 2. run in folder /home/CosmosSDK/cosmos-sdk/build # ``` ./simd init demo ```    
-   the output should be in a firmat of a Genenis json file (starting with "moniker": "demo")
+   the output should be in a format of a [Genenis basic json file](#footnote-2)) (starting with "moniker": "demo")
    
 3. run /home/CosmosSDK/cosmos-sdk/build # ```./simd keys list```
 
@@ -91,8 +100,8 @@ and in the [full sdk tutorial including Docker images and cosmos sdk official do
    ```
 
 7. Finally we run /cosmos-sdk/build # ```./simd genesis collect-gentxs```
-   which will output a complete json file including the keys and chain,tokens,
-   allocations,gas prices (see the complete Genesis json_2 file below)
+   which will output a complete cosmos genesis json file including the keys and chain,tokens,
+   allocations,gas prices -> see the [cosmos sdk complete Genesis json file](https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/blob/main/Genesis.json) 
 
 
 ## Start The Blockchain
@@ -179,8 +188,28 @@ And we can see the students balance has increased by the sent amount (10):
    pagination:
    total: "1"
 
+![image](https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/assets/102882394/b9f83e26-4c00-4c85-a96a-2727c81161dd)
 
   
+
+
+
+
+
+
+
+
+Rererences
+
+
+<a id="footnote-1" href="#">ref1</a>All the steps above are described in the [cosmos.network tutorials portal](https://tutorials.cosmos.network/tutorials/3-run-node/#run-a-node-api-and-cli) and in the [full sdk tutorial including Docker images and cosmos sdk official docs](https://tutorials.cosmos.network/tutorials/2-setup/)
+
+<a id="footnote-2" href="#">Basic Genesis.JSON 1</a>https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/blob/main/CosmosGenesisBasic.json</a>
+<a id="footnote-3" href="#">Complete Genesis.JSON 2</a>https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/blob/main/Genesis.json</a>
+
+
+
+
 Genesis JSON_2
    ```
       {
