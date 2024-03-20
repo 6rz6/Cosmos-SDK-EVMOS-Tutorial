@@ -2,22 +2,42 @@
 Create your own blockchain and Validator Nodes using the Cosmos SDK and EVMOS - A simple to follow tutorial (for the complete SDK Tutorial see reference 1 below)
 
 ## Its easy Getting Started
-1. Install the lastest [GO version](https://go.dev/doc/install) and remove previous versions
+1. Install the lastest [GO version](https://go.dev/doc/install) and remove previous version using Linux CLI:
 
-Linux CLI:
 ```
      rm -rf /usr/local/go
      cd /usr/local
      wget https://go.dev/dl/go1.22.1.linux-amd64.tar.gz
-     tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz
-     run -> $ go version in CLI -> Expected result: go version go1.22.1 linux/amd64
+     tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz     
 ```
-2. 
+run -> ``` go version ``` in the CLI -> Expected result: ``` go version go1.22.1 linux/amd64 ```
+Once GO version shows the right version add GO to the env global path ``` export PATH=$PATH:$(go env GOPATH)/bin ```
+Run the command ```go version``` again from **Any OTHER** folder on the OS and it should bring the same result ``` go version go1.22.1 linux/amd64 ```
 
-3. Install node      ```sudo apt install npm```
-4. install GNUmake   ```sudo apt install make```
-5. install Rust      ```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh```
-6. Pull the cosmos SDK from github and clone it to /home/cosmos/cosmos-sdk
+2. **Installing EVMOS**
+   
+  2.1 first run ``` sudo apt install jq ``` and verify the install success by running 
+    next ``` jq --version ``` which should result in ``` jq-1.6 ``` (or higher version number) 
+  
+  2.3 Install node       ```sudo apt install npm```
+  
+  2.4. install GNUmake   ```sudo apt install make```
+
+  2.5 Clone evmos from git and build it by using:
+    ```
+          git clone https://github.com/evmos/evmos.git
+          cd evmos
+          git fetch
+          git checkout <tag>  
+          make install
+          evmosd version
+    ```   
+  2.6 If a ```evmosd: command not found ``` error message is returned -> **you have misconfigured Go** or installed a **wrong version** (below 1.21)
+   Once the evmosd version is displayed we can proceed to install Rust.
+   
+3. install Rust ```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh```
+   
+4. Clone the cosmos SDK from github and clone it to /home/cosmos/cosmos-sdk
    Make sure you are using the same version as below v0.45.4
    ```
    mkdir cosmos
@@ -27,24 +47,23 @@ Linux CLI:
    git checkout v0.45.4 
 
    ```
-8. If Everything was installed correctly, you should be able to run in /home/cosmos/cosmos-sdk/
+5. If Everything was installed correctly, you should be able to run in /home/cosmos/cosmos-sdk/
    ```make build```
    once the build has been completed without errors.
    run ```./build/simd version``` which should return 0.45.4.
 
 All the steps above are described in the [cosmos.network tutorials portal](https://tutorials.cosmos.network/tutorials/3-run-node/#run-a-node-api-and-cli) 
 and in the [full sdk tutorial including Docker images and cosmos sdk official docs](https://tutorials.cosmos.network/tutorials/2-setup/)
+
 ## How to Use the Cosmos SDK to Run a Node, API, and CLI
-1. watch this short [vid to review the next steps](https://youtu.be/wNUjkp2PFQI)
-    ```
-    <iframe width="576" height="324" src="https://www.youtube.com/embed/wNUjkp2PFQI" title="Running a Node" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    ```
+1. you can watch this short [vid to review the next steps](https://youtu.be/wNUjkp2PFQI) or simply start 
+  
 2. run in folder /home/CosmosSDK/cosmos-sdk/build # ``` ./simd init demo ```    
    the output should be in a firmat of a Genenis json file (starting with "moniker": "demo")
    
-4. run /home/CosmosSDK/cosmos-sdk/build # ```./simd keys list```
+3. run /home/CosmosSDK/cosmos-sdk/build # ```./simd keys list```
 
-5. Next create keys by running ```./simd keys add b9lab``` and the expected output should be:
+4. Next create keys by running ```./simd keys add b9lab``` and the expected output should be:
 
    ```
      **Important** write this mnemonic phrase in a safe place.
@@ -61,17 +80,17 @@ and in the [full sdk tutorial including Docker images and cosmos sdk official do
        "key":"Ah+vpcVHqLpwbBAzKqcecPtucu5c1HZRW8gYHxGAhY+"}'
        type: local
 
-7. Define the amount of tokens to create followed by the token name ('stake') in our chain
+5. Define the amount of tokens to create followed by the token name ('stake') in our chain
    /cosmos-sdk/build # ```./simd genesis add-genesis-account b9lab 100000000stake```
 
-8. Define the cost of staking for a Validator Node (use the chain-id name from the Genesis json_1 file) /cosmos-sdk/build #
+6. Define the cost of staking for a Validator Node (use the chain-id name from the Genesis json_1 file) /cosmos-sdk/build #
    ```
    ./simd genesis gentx b9lab 70000000stake --chain-id test-chain-tgFWQe
      Genesis transaction written to "/root/.simapp/config/gentx/gentx-
      eee5fe21000bcbfd270e34d19f227be66cfa5084.json"
    ```
 
-9. Finally we run /cosmos-sdk/build # ```./simd genesis collect-gentxs```
+7. Finally we run /cosmos-sdk/build # ```./simd genesis collect-gentxs```
    which will output a complete json file including the keys and chain,tokens,
    allocations,gas prices (see the complete Genesis json_2 file below)
 
@@ -118,11 +137,40 @@ and in the [full sdk tutorial including Docker images and cosmos sdk official do
   pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"Anu7Dkoa51eJK7tj65KdzfZ9Cn9lq6RqFxG7B85cdQOn"}'
   type: local
 
-We have created a wallet for the student. In this stage the wallet has 0 balance and isnt known by the blockchain, lets send him some tokens
+  We have created a wallet for the student. In this stage the wallet has 0 balance and **isnt known by the blockchain**
 
 ### Sending and Receiving tokens on our Blockchain
 
+  lets send him some tokens so the blockchain registers his wallet and transaction:
+  
+  
+```
+./simd tx bank send $(./simd keys show b9lab -a) $(./simd keys show student -a) 10stake --chain-id test-chain-tgFWQe
+```
+we will get a summary of the planned transaction and a confirmation prompt:
 
+![image](https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/assets/102882394/e7a5f870-2cf0-4ef0-964b-4ea14f4fb17b)
+
+Next confirm the transaction before signing and broadcasting [y/N]: **y**
+     code: 0
+     codespace: ""
+     data: ""
+     events: []
+     gas_used: "0"
+     gas_wanted: "0"
+     height: "0"
+     info: ""
+     logs: []
+     raw_log: ""
+     timestamp: ""
+     tx: null
+     txhash: 5ABB74F59F8424BDD6635E2605F83157F9F44D91DC5634907750A633EAB01ED9 
+     
+The Transcation will take a few seconds to be registered in the blockchain, we can query the balance of the student to check:
+
+```
+   ./simd query bank balances $(./simd keys show student -a)
+```
 
 
 
