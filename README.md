@@ -202,13 +202,16 @@ And we can see the students balance has increased by the sent amount (10):
 Rererences
 
 
-<a id="footnote-1" href="#">ref1</a>All the steps above are described in the [cosmos.network tutorials portal](https://tutorials.cosmos.network/tutorials/3-run-node/#run-a-node-api-and-cli) and in the [full sdk tutorial including Docker images and cosmos sdk official docs](https://tutorials.cosmos.network/tutorials/2-setup/)
+<a id="footnote-1" href="#">Full Cosmos and EVMOS Documentation (~250hr of reading)</a> All the steps above are described in the [cosmos.network tutorials portal](https://tutorials.cosmos.network/tutorials/3-run-node/#run-a-node-api-and-cli) 
 
-<a id="footnote-2" href="#">Basic Genesis.JSON 1</a>https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/blob/main/CosmosGenesisBasic.json</a>
-<a id="footnote-3" href="#">Complete Genesis.JSON 2</a>https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/blob/main/Genesis.json</a>
+and  [full sdk tutorial including Docker images and cosmos sdk official docs](https://tutorials.cosmos.network/tutorials/2-setup/)
+
+<a id="footnote-2" href="#"> <a href="https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/blob/main/CosmosGenesisBasic.json">Basic Genesis.JSON</a></a>
+
+<a id="footnote-3" href="#"> <a href="https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/blob/main/Genesis.json">Complete Genesis.JSON</a></a>
 
 
-
+Raw Cosmos.json files:
 
 Genesis JSON_2
    ```
