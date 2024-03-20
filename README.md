@@ -35,4 +35,6 @@ Linux CLI:
 All the steps above are described in the [cosmos.network tutorials portal]([https://tutorials.cosmos.network/tutorials/3-run-node/#run-a-node-api-and-cli])
 
 ## How to Use the Cosmos SDK to Run a Node, API, and CLI
-11. [watch this short vid to review the next steps](https://youtu.be/wNUjkp2PFQI)
+11. watch this short vid to [review the next steps](https://youtu.be/wNUjkp2PFQI)
+    <iframe width="576" height="324" src="https://www.youtube.com/embed/wNUjkp2PFQI" title="Running a Node" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
