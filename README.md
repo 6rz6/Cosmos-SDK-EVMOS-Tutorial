@@ -1,15 +1,13 @@
 
-# Create your own blockchain with CosmosSDK and EVMOS simapp, configuration and Usage Tutorial
+# Create your own blockchain, Validator nodes and coins using Cosmos-SDK and EVMOS in 1 hour Tutorial
 
-Create your own blockchain and Validator Nodes in less than an hours using the Cosmos SDK and EVMOS .
-
-   A **simple** to follow tutorial - Promised!
-
-   For the Complicated, long (250+ min read) Tutorials of both the [Cosmos SDK and EVMOS](#footnote-1)
+   A **simple** to follow configuration and Usage Tutorial - Promised!
+   
+   For the **Complicated**, long (250+ min read) Tutorials of both the [Cosmos SDK and EVMOS](#footnote-1)
 
 ## Its easy Getting Started
 
-1. Install the lastest [GO version](https://go.dev/doc/install) and remove previous version using Linux CLI:
+1. ### Install the lastest [GO version](https://go.dev/doc/install) and remove previous version using Linux CLI:
 
 ```
      rm -rf /usr/local/go
@@ -23,16 +21,16 @@ Once GO version shows the right version add GO to the env global path ``` export
 
 Run the command ```go version``` again from **Any OTHER** folder on the OS and it should bring the same result ``` go version go1.22.1 linux/amd64 ```
 
-2. **Installing EVMOS**
+2. ### **Installing EVMOS**
    
-  2.1 first run ``` sudo apt install jq ``` and verify the install success by running 
-    next ``` jq --version ``` which should result in ``` jq-1.6 ``` (or higher version number) 
+  2.1 #### first run ``` sudo apt install jq ``` and verify the install success by running 
+           next ``` jq --version ``` which should result in ``` **jq-1.6** ``` (or higher version) 
   
-  2.3 Install node       ```sudo apt install npm```
+  2.3 #### Install node      ``` sudo apt install npm ```
   
-  2.4. install GNUmake   ```sudo apt install make```
+  2.4 #### install GNUmake   ``` sudo apt install make ```
 
-  2.5 Clone evmos from git and build it by using:
+  2.5 #### Clone evmos from git and build it by using:
   
     ```
       git clone https://github.com/evmos/evmos.git
@@ -43,13 +41,16 @@ Run the command ```go version``` again from **Any OTHER** folder on the OS and i
       evmosd version
     ```   
   
-  2.6 If a ``` evmosd: command not found ``` error message is returned -> **you have misconfigured Go** or installed a **wrong version** (below 1.21)
-   Once the evmosd version is displayed we can proceed to install Rust.
+  2.6 #### If a ``` evmosd: command not found ``` error message is returned -> 
+     **you have misconfigured Go** or **installed a wrong version** (below 1.21)  
+     Once the evmosd version is displayed we can proceed to install Rust.
    
-3. install Rust ```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh ```
+3. ### install Rust
    
-4. Clone the cosmos SDK from github and clone it to /home/cosmos/cosmos-sdk
-   Make sure you are using the same version as below v0.45.4
+   ``` curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh ```
+   
+4. ### Clone the cosmos SDK from github to /home/cosmos/cosmos-sdk
+   Make sure you are using the min same version as used below v0.45.4
 
    ```
       mkdir cosmos
@@ -60,7 +61,7 @@ Run the command ```go version``` again from **Any OTHER** folder on the OS and i
    
    ```
 
-5. If Everything was installed correctly, you should be able to run in /home/cosmos/cosmos-sdk/
+5. ### If Everything was installed correctly, you should be able to run in /home/cosmos/cosmos-sdk/
 
    ``` make build ```
    
@@ -70,12 +71,13 @@ Run the command ```go version``` again from **Any OTHER** folder on the OS and i
 
 ## How to Use the Cosmos SDK to Run a Node, API, and CLI
 
-1. Recomended you watch this short 5min [vid to review the next steps](https://youtu.be/wNUjkp2PFQI) or simply start with #2
+1. ### Recomended you watch this short 5min [vid to review the next steps](https://youtu.be/wNUjkp2PFQI) 
    
   <a href="https://youtu.be/wNUjkp2PFQI">![image](https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/assets/102882394/f95d618c-194d-4605-a486-6c847387d47b)</a>
 
-
-3. run in folder /home/CosmosSDK/cosmos-sdk/build # ``` ./simd init demo ```    
+2. Change dir to /home/CosmosSDK/cosmos-sdk/build
+   
+3. run in folder  # ``` ./simd init demo ```    
    the output should be in a format of a [Genenis basic json file](#footnote-2)) (starting with "moniker": "demo")
    
 4. run /home/CosmosSDK/cosmos-sdk/build # ```./simd keys list```
@@ -189,7 +191,7 @@ The Transcation will take a few seconds to be registered in the blockchain, we c
  ./simd query bank balances $(./simd keys show student -a)
 ```
 
-And we can see the students balance has increased by the sent amount (10):
+## And Finally we can see the students balance has increased by the sent amount (10):
      
  **balances:**
  **- amount: "10"**
@@ -202,18 +204,17 @@ And we can see the students balance has increased by the sent amount (10):
 ![image](https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/assets/102882394/b9f83e26-4c00-4c85-a96a-2727c81161dd)
 
 
+ 
+## Rererences <a id="footnote-1" href="#"></a> 
 
 
+### The Complete Cosmos and EVMOS Documentation (~250min of reading)</a> 
 
-  
-Rererences
+#### All the steps in the tutorial are described in the [cosmos.network tutorials portal](https://tutorials.cosmos.network/tutorials/3-run-node/#run-a-node-api-and-cli) 
 
+#### The [full sdk tutorial including Docker images and cosmos sdk official docs](https://tutorials.cosmos.network/tutorials/2-setup/)
 
-<a id="footnote-1" href="#">Full Cosmos and EVMOS Documentation (~250min of reading)</a> 
-
-All the steps in the tutorial are described in the [cosmos.network tutorials portal](https://tutorials.cosmos.network/tutorials/3-run-node/#run-a-node-api-and-cli) 
-
-and the [full sdk tutorial including Docker images and cosmos sdk official docs](https://tutorials.cosmos.network/tutorials/2-setup/)
+#### **Installing Ignite** and deploying a blockchain on web3 using the Cosmos sdk  (Coming soon)
 
 <a id="footnote-2" href="#"> <a href="https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/blob/main/CosmosGenesisBasic.json">Basic Genesis.JSON</a></a>
 
@@ -233,7 +234,7 @@ and the [full sdk tutorial including Docker images and cosmos sdk official docs]
 
 
 
-Raw Cosmos.json files:
+### Raw Cosmos Genesis.json files:
 
 Genesis JSON_2
    ```
