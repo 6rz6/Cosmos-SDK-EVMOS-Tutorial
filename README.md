@@ -33,36 +33,40 @@ Run the command ```go version``` again from **Any OTHER** folder on the OS and i
   2.4. install GNUmake   ```sudo apt install make```
 
   2.5 Clone evmos from git and build it by using:
+  
     ```
-          git clone https://github.com/evmos/evmos.git
-          cd evmos
-          git fetch
-          git checkout <tag>  
-          make install
-          evmosd version
+      git clone https://github.com/evmos/evmos.git
+      cd evmos
+      git fetch
+      git checkout <tag>  
+      make install
+      evmosd version
     ```   
   
-  2.6 If a ```evmosd: command not found ``` error message is returned -> **you have misconfigured Go** or installed a **wrong version** (below 1.21)
+  2.6 If a ``` evmosd: command not found ``` error message is returned -> **you have misconfigured Go** or installed a **wrong version** (below 1.21)
    Once the evmosd version is displayed we can proceed to install Rust.
    
-3. install Rust ```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh```
+3. install Rust ```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh ```
    
 4. Clone the cosmos SDK from github and clone it to /home/cosmos/cosmos-sdk
    Make sure you are using the same version as below v0.45.4
 
    ```
-   mkdir cosmos
-   cd cosmos
-   git clone https://github.com/cosmos/cosmos-sdk
-   cd cosmos-sdk
-   git checkout v0.45.4 
-
+      mkdir cosmos
+      cd cosmos
+      git clone https://github.com/cosmos/cosmos-sdk
+      cd cosmos-sdk
+      git checkout v0.45.4
+   
    ```
 
 5. If Everything was installed correctly, you should be able to run in /home/cosmos/cosmos-sdk/
-   ```make build```
+
+   ``` make build ```
+   
    once the build has been completed without errors.
-   run ```./build/simd version``` which should return 0.45.4.
+   
+   run ```./build/simd version ``` which should return 0.45.4.
 
 ## How to Use the Cosmos SDK to Run a Node, API, and CLI
 
@@ -205,7 +209,7 @@ And we can see the students balance has increased by the sent amount (10):
 Rererences
 
 
-<a id="footnote-1" href="#">Full Cosmos and EVMOS Documentation (~250hr of reading)</a> 
+<a id="footnote-1" href="#">Full Cosmos and EVMOS Documentation (~250min of reading)</a> 
 
 All the steps in the tutorial are described in the [cosmos.network tutorials portal](https://tutorials.cosmos.network/tutorials/3-run-node/#run-a-node-api-and-cli) 
 
