@@ -5,7 +5,7 @@ Create your own blockchain and Validator Nodes in less than an hours using the C
 
    A **simple** to follow tutorial - Promised!
 
-   for the coplicated, long and complete SDK Tutorials of both the Cosmos SDK and EVMOS see [ref1](#footnote-1)
+   For the Complicated, long (250+ min read) Tutorials of both the [Cosmos SDK and EVMOS](#footnote-1)
 
 ## Its easy Getting Started
 
