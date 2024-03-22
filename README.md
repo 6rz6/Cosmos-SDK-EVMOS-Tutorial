@@ -40,8 +40,8 @@ Run the command ```go version``` again from **Any OTHER** folder on the OS and i
       make install
       evmosd version
     ```   
-  
-  2.6 #### If a ``` evmosd: command not found ``` error message is returned -> 
+    
+   2.6 #### If a ``` evmosd: command not found ``` error message is returned -> 
      **you have misconfigured Go** or **installed a wrong version** (below 1.21)  
      Once the evmosd version is displayed we can proceed to install Rust.
    
@@ -109,9 +109,10 @@ Run the command ```go version``` again from **Any OTHER** folder on the OS and i
      eee5fe21000bcbfd270e34d19f227be66cfa5084.json"
    ```
 
-8. Finally we run /cosmos-sdk/build # ```./simd genesis collect-gentxs```
-   which will output a complete cosmos genesis json file including the keys and chain,tokens,
-   allocations,gas prices -> see the [cosmos sdk complete Genesis json file](https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/blob/main/Genesis.json) 
+8. Finally we run /cosmos-sdk/build # ``` ./simd genesis collect-gentxs ```
+
+   which will output a [Cosmos sdk complete Genesis.json file](https://github.com/6rz6/Cosmos-SDK-EVMOS-Tutorial/blob/main/Genesis.json)
+   including the keys and chain,tokens, allocations,gas prices and more
 
 
 ## Start The Blockchain
@@ -236,7 +237,7 @@ The Transcation will take a few seconds to be registered in the blockchain, we c
 
 ### Raw Cosmos Genesis.json files:
 
-Genesis JSON_2
+Genesis JSON 2 Created 
    ```
       {
  "moniker": "demo",
@@ -489,7 +490,7 @@ Genesis JSON_2
  }
 }
    ```
-JSON1
+Genesis JSON 1 - Created on chain init:
    ```
    
    {
